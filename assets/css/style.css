@@ -1,0 +1,272 @@
+body {
+    background-color: #1b1b1b!important;
+}
+
+/* Classe .navbar, a Barra que fica no topo */
+.navbar {
+    position: relative;
+}
+
+/* Classe form-inline, que esta dentro da Navbar, 
+a navbar tambem é uma classe, div do campo de busca*/
+.navbar .form-inline {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Classe form-control, que esta dentro da Navbar, 
+a navbar tambem é uma classe, campo de busca*/
+.navbar .form-control {
+    background-color: #1b1b1b!important;
+    color: #fff;
+    border-color: #fff;
+    border-radius: 0; /* Arredondar as bordas*/
+    height: 30px;
+    max-width: 130px;
+}
+
+/* Tag imagem que esta dentro da Navbar, a navbar tambem é uma classe,
+logo da Netflix e o icone de menu sanduiche*/
+.navbar img {
+    height: 30px;
+}
+
+/* Classe .navbar-toggler dentro de .navbar-dark , o menu sanduiche */
+.navbar .navbar-toggler {
+    color: #fff;
+    border: none; /* Remover a borda*/
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+/* Tag ul dentro da navbar, a lista do menu lateral*/
+.navbar ul.sidebar {
+    color: #999898;
+    max-width: 250px;
+    background-color: #1b1b1b;
+    position: absolute;
+
+    /* Distancias */
+    /* Distancia do topo */
+    top: 60px;
+    left: -250px;
+    
+    /* Altura é 100vh, que é a altura total da tela, meno 60px, que é a distancia do top*/
+    height: calc(100vh - 60px);
+
+    /* Para gerar o scroll vertical da lista*/
+    overflow-y: auto;
+
+    /*Animação*/
+    transition: all 0.3s ease-out;
+    
+    /*Transparencia*/
+    opacity: .5;
+}
+
+/* Estilo que irá mostrar menu lateral*/
+.navbar.sidebar-open ul {
+    left: 0;
+    opacity: 1;
+}
+
+/* Tag li dentro de ul dentro da navbar, itens da lista do menu lateral*/
+.navbar ul.sidebar li {
+    /*em é medida relativa, vale +/- 16px*/
+    /* Padding em cima e em baixo (0.3em) e na esquerda e direita (1em)*/
+    padding: 0.3em 1em;
+    z-index: 1000;
+}
+
+/* Tag li, com a classe divider, dentro de ul dentro da navbar, divisória dentro da lista do menu lateral*/
+.navbar ul.sidebar li.divider {
+    border-bottom: #999898 1px solid;
+    margin: 0.3em auto;
+}
+
+/* Img dentro da classe .media-avatar, a imagem no menu lateral*/
+.media-avatar img {
+    height: 50px;
+}
+
+/* Tags a com a classe .text-reset */
+a.text-reset {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/* Backdrop, que da o efeito de escurecer a tela dando foco ao menu lateral*/
+.backdrop {
+    background-color: rgb(0, 0, 0, 0.4);
+
+    /*Para o efeito estar na tela toda, mesmo com scroll*/
+    position: fixed;
+    top: 60px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+
+    /*z-index menor apenas que o z-index do menu lateral*/
+    z-index: 999;
+}
+
+/*Imagem principal, o banner em destaque*/
+.full-banner {
+    background-image: url('../img/full-banner.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    min-height: 120px;
+}
+
+/* Tag small dentro da tag com a classe .full-banner,
+o ano, mes e tempo de filme*/
+.full-banner small {
+    color: #999898;
+}
+
+/* Tag com a classe .btn-primary dentro da tag com a classe .full-banner,
+o botão assistir*/
+.full-banner .btn-primary {
+    background-color: #e30f19;
+    border-radius: 0;
+    border: none;
+    min-width: 100px;
+}
+
+/* Tag h2 que esta dentro da tag com a classe .list-titles, e tambem para o footer */
+.list-titles h2, footer {
+    color: #999898;
+}
+
+/* Tag img que esta dentro da tag com a classe .list-titles */
+.list-titles img {
+    min-width: 160px;
+}
+
+/*------------------------------------------------------------------------------------------------*/
+/* Diferentes telas */
+
+@media (max-width: 193px) {
+
+    /* Tag ul dentro da navbar, a lista do menu lateral*/
+    .navbar ul.sidebar {
+        /* Distancia do topo */
+        top: 127px;
+        /* Altura é 100vh, que é a altura total da tela, meno 60px, que é a distancia do top*/
+        height: calc(100vh - 127px);
+    }
+}
+
+@media (min-width: 194px) {
+    /* Tag ul dentro da navbar, a lista do menu lateral*/
+    .navbar ul.sidebar {
+        /* Distancia do topo */
+        top: 88px;
+        /* Altura é 100vh, que é a altura total da tela, meno 60px, que é a distancia do top*/
+        height: calc(100vh - 88px);
+    }
+}
+
+@media (min-width: 354px) {
+    /* Tag ul dentro da navbar, a lista do menu lateral*/
+    .navbar ul.sidebar {
+        /* Distancia do topo */
+        top: 58px;
+        /* Altura é 100vh, que é a altura total da tela, meno 60px, que é a distancia do top*/
+        height: calc(100vh - 58px);
+    }
+}
+
+/* Telas SM*/
+@media (min-width: 576px) {
+    
+    /*Imagem principal, o banner em destaque*/
+    .full-banner{
+        min-height: 256px;
+    }
+
+    /* Classe form-control, que esta dentro da Navbar, 
+        a navbar tambem é uma classe, campo de busca*/
+    .navbar .form-control {
+        max-width: 180px;
+    }
+}
+
+/* Telas MD*/
+@media (min-width: 768px) {
+
+    /* Tag img que esta dentro da tag com a classe .list-titles */
+    .list-titles img {
+        min-width: 230px;
+    }
+}
+
+
+/* Telas LG*/
+@media (min-width: 992px) {
+
+    /* Tag com a classe .navbar.bg-dark, a navbar do topo */
+    .navbar.bg-dark {
+        background-color: transparent!important;
+        background-image: url('../img/header_gradient.png');
+        background-repeat: repeat-x;
+    }
+
+    /* Tag com a classe .full-banner, o poster em destaque */
+    .full-banner {
+        min-height: 50vh;
+    }
+
+    /* Tag p dentro da tag com a classe .full-banner, a sinopse do filme em destaque*/
+    .full-banner p {
+        color: #999898;
+        max-width: 50vw;
+    }
+
+    /* Tag com a classe .navbar-brand.flex-grow-1, alinha os topicos da nav top a esquerda*/
+    .navbar-brand.flex-grow-1 {
+        flex-grow: initial!important;
+    }
+
+    /* Tag ul com a classe .nav dentro da tag com a classe .navbar,
+    os topicos na navbar top*/
+    .navbar ul.nav {
+        flex-grow: 1!important;
+    }
+
+    /* Tag com a classe .active dentro da tag ul com a classe .nav dentro da tag com a classe .navbar,
+    Topico Navegar na navbar top*/
+    .navbar ul.nav .active{
+        color: #e30f19!important;
+        font-weight: bold;
+    }
+
+    /* Tag img dentro da tag com a classe .navbar, logo na navbar top*/
+    .navbar img {
+        height: 34px;
+    }
+}
+
+/* Telas XL*/
+@media (min-width: 1200px) {
+
+    /* Tag li dentro da tag ul com a classe .nav dentro da tag com a classe .navbar,
+    os topicos na navbar top*/
+    .navbar ul.nav li {
+        padding: 0;
+    }
+
+    /* Tag ul com a classe .nav dentro da tag com a classe .navbar,
+    os topicos na navbar top*/
+    .navbar ul.nav {
+        color: rgb(255, 255, 255, 0.5)!important;
+    }
+
+    /* Tag com a classe .active dentro da tag ul com a classe .nav dentro da tag com a classe .navbar,
+    os topicos na navbar top*/
+    .navbar ul.nav .active {
+        color: rgb(255, 255, 255, 1)!important;
+        font-weight: bold;
+    }
+}
